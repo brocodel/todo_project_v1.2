@@ -1,0 +1,21 @@
+{% extends 'todo_list/layout.html' %}
+
+{% block title %}Create{% endblock %}
+
+{% block content %}
+    <div class="page_name"><p>ToDo</p></div>
+    <div class="features">
+        <form class="my_form" method="post">
+            {% csrf_token %}
+
+            {{ form }}<br>
+            <span>{{ error }}</span>
+
+            
+            <button class="btn" type="submit">Add ToDo</button>
+            
+        </form>
+
+    </div>
+
+{% endblock %}

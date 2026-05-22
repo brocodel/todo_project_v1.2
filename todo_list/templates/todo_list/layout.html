@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %} {% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'todo_list/css/todo_list.css' %}">
+    </head>
+    <body>
+        <aside>
+            <img src="{% static 'todo_list/img/to-do-list.png'%}">
+            
+            <h3>Navigation</h3>
+            <ul>
+                <a href="{% url 'home' %}"><li>ToDo</li></a>
+                <a href="{% url 'about' %}"><li>About</li></a> 
+                <a href="{% url 'contacts' %}"><li>Contacts</li></a>
+                <a href="{% url 'create' %}"><li>Create ToDo</li></a>
+                
+                
+            </ul>
+
+        </aside>
+        
+        {% block content %} 
+
+        {% endblock %}
+        
+        
+        
+        
+    </body>
+</html>

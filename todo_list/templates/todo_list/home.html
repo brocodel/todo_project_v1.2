@@ -1,0 +1,23 @@
+{% extends 'todo_list/layout.html' %}
+
+{% block title %}Todo{% endblock %}
+
+{% block content %}
+
+    <div class="page_name"><p>ToDo</p></div>
+    <div class="container">
+        {% for i in todo %}
+            <div class="rectangle" style="background-color: {{ i.color }}">
+                <p>{{ i }}</p>
+                
+                <form class="home_form" action="{% url 'delete_todo' i.id%}" method="post">
+                    {% csrf_token %}
+                    <button class="my_btn" type="submit">Done</button>
+                    
+                </form>
+                 
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
